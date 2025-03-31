@@ -1,6 +1,6 @@
 // Backend (Node.js + Express + SQLite)
 const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require('better-sqlite3').verbose();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require("express-validator");
