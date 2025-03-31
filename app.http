@@ -1,0 +1,40 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+ { "name": "John Doe", "email": "john@example.com", "password": "password123", "role": "Normal User" }
+
+###
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+           "name": "Anand",
+           "email": "sri@example.com",
+           "password": "Owner@123",
+           "address": "203 Owner Street",
+           "role": "owner"
+         }
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+ { "email": "admin2@example.com", "password": "Admin@123" }
+
+###
+POST http://localhost:5000/stores
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzMzQ4OTkxLCJleHAiOjE3NDMzNTI1OTF9.cRM1y7_vMYqbioCoE9g-NQHvslIZqjzcNo5n4FRJTDE
+
+{
+    "name": "John Doe",
+    "email": "user@example.com",
+    "password": "User@123",
+    "address": "456 User Street",
+    "role": "user"
+}
+
+###
+GET http://localhost:5000/stats
+Content-Type: application/json
+Authorization: Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzMzQ4ODg5LCJleHAiOjE3NDMzNTI0ODl9.QeJ0tUqsUTrGYZnHprCtiKIGCbE56NyXpdEMQF5T-Cs
