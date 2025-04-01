@@ -18,9 +18,9 @@ const db = new sqlite3.Database(path.join(__dirname, 'store_rating.db'), (err) =
         // Create tables with proper constraints and indexes
         db.serialize(() => {
             // Drop existing tables if they exist
-            db.run('DROP TABLE IF EXISTS ratings');
-            db.run('DROP TABLE IF EXISTS stores');
-            db.run('DROP TABLE IF EXISTS users');
+            // db.run('DROP TABLE IF EXISTS ratings');
+            // db.run('DROP TABLE IF EXISTS stores');
+            // db.run('DROP TABLE IF EXISTS users');
 
             // Users table
             db.run(`
