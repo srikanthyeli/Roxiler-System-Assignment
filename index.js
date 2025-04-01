@@ -1,6 +1,6 @@
 // Backend (Node.js + Express + SQLite)
 const express = require('express');
-const sqlite3 = require('better-sqlite3').verbose();
+const sqlite3 = require('sqlite3')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require("express-validator");
@@ -148,7 +148,7 @@ app.get('/stats', (req, res) => {
 });
 
 // List all stores
-app.get('/stores', (req, res) => {
+app.get('/stores', authenticateToken, (req, res) => {
     const { name, address } = req.query;
     let query = 'SELECT * FROM stores';
     let params = [];

@@ -8,12 +8,12 @@ POST http://localhost:5000/register
 Content-Type: application/json
 
 {
-           "name": "Anand",
-           "email": "sri@example.com",
-           "password": "Owner@123",
-           "address": "203 Owner Street",
-           "role": "owner"
-         }
+    "name": "Subbaih",
+    "email": "srikanth@gmail.com",
+    "password": "Owner@123",
+    "address": "203 Owner Street",
+    "role": "owner"
+}
 
 ###
 POST http://localhost:5000/login
@@ -24,17 +24,17 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/stores
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzMzQ4OTkxLCJleHAiOjE3NDMzNTI1OTF9.cRM1y7_vMYqbioCoE9g-NQHvslIZqjzcNo5n4FRJTDE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzNTAxMjM2LCJleHAiOjE3NDM1MDQ4MzZ9.b_jYrEC57ie7OqefTRfnFf6arZ_3vxnZOYmZDuRPSVU
 
 {
-    "name": "John Doe",
-    "email": "user@example.com",
+    "name": "Srikanth",
+    "email": "user@gmail.com",
     "password": "User@123",
-    "address": "456 User Street",
+    "address": "458 User Street",
     "role": "user"
 }
 
 ###
 GET http://localhost:5000/stats
 Content-Type: application/json
-Authorization: Bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzMzQ4ODg5LCJleHAiOjE3NDMzNTI0ODl9.QeJ0tUqsUTrGYZnHprCtiKIGCbE56NyXpdEMQF5T-Cs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzNTAxMTQ2LCJleHAiOjE3NDM1MDQ3NDZ9.1A4hBd-76opXW9S9w9vZyIT_wIZKffWi4AqxRLvvBog
