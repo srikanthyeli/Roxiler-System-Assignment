@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require('sqlite3');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
@@ -506,6 +506,76 @@ app.get('/stores/search', authenticateToken, async (req, res) => {
     } catch (err) {
         res.status(500).json({
             message: 'Server error searching stores',
+            error: err.message
+        });
+    }
+});
+
+// Initialize sample stores (Development purpose only)
+app.post('/init-sample-stores', async (req, res) => {
+    const sampleStores = [
+        {
+            name: 'Grocery Express',
+            email: 'grocery@express.com',
+            address: '123 Main Street, Downtown',
+            owner_id: null
+        },
+        {
+            name: 'Fashion Hub',
+            email: 'info@fashionhub.com',
+            address: '456 Style Avenue, Mall District',
+            owner_id: null
+        },
+        {
+            name: 'Tech World',
+            email: 'contact@techworld.com',
+            address: '789 Digital Road, Tech Park',
+            owner_id: null
+        },
+        {
+            name: 'Fresh Foods Market',
+            email: 'hello@freshfoods.com',
+            address: '321 Organic Lane, Green Zone',
+            owner_id: null
+        },
+        {
+            name: 'Sports Elite',
+            email: 'info@sportselite.com',
+            address: '555 Fitness Boulevard, Stadium Area',
+            owner_id: null
+        }
+    ];
+
+    try {
+        // Use a transaction to ensure all stores are added or none
+        db.serialize(() => {
+            db.run('BEGIN TRANSACTION');
+
+            const stmt = db.prepare('INSERT INTO stores (name, email, address, owner_id) VALUES (?, ?, ?, ?)');
+            
+            sampleStores.forEach((store) => {
+                stmt.run([store.name, store.email, store.address, store.owner_id]);
+            });
+
+            stmt.finalize();
+
+            db.run('COMMIT', (err) => {
+                if (err) {
+                    return res.status(500).json({
+                        message: 'Error initializing sample stores',
+                        error: err.message
+                    });
+                }
+                res.json({
+                    message: 'Sample stores initialized successfully',
+                    count: sampleStores.length
+                });
+            });
+        });
+    } catch (err) {
+        db.run('ROLLBACK');
+        res.status(500).json({
+            message: 'Server error initializing sample stores',
             error: err.message
         });
     }

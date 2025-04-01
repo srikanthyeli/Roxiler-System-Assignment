@@ -31,3 +31,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6I
 GET http://localhost:5000/stats
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzNTAxMTQ2LCJleHAiOjE3NDM1MDQ3NDZ9.1A4hBd-76opXW9S9w9vZyIT_wIZKffWi4AqxRLvvBog
+
+###
+POST http://localhost:5000/init-sample-stores
+Content-Type: application/json
+
+###
+GET http://localhost:5000/stores
+Content-Type: application/json
