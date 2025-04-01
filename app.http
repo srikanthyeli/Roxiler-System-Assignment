@@ -1,41 +1,90 @@
-POST http://localhost:5000/register
+POST http://localhost:3001/register
 Content-Type: application/json
 
  { "name": "John Doe", "email": "john@example.com", "password": "password123", "role": "Normal User" }
 
 ###
-POST http://localhost:5000/register
+POST http://localhost:3001/register
 Content-Type: application/json
 
 {
-    "name": "Subbiah",
-    "email": "subba@gmail.com",
-    "password": "Owner@123",
+    "name": "YogaNanda",
+    "email": "Yoga@gmail.com",
+    "password": "Sri@123",
     "address": "203 Owner Street",
-    "role": "owner"
+    "role": "StoreOwner"
 }
 
 ###
-POST http://localhost:5000/login
-Content-Type: application/json
-
- { "email": "admin2@example.com", "password": "Admin@123" }
 
 ###
-GET http://localhost:5000/stores
+POST http://localhost:3001/login
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzNTAyMjU0fQ.oZ6XpglDQskE6VaPiujOwsP-JmuXc4FRtl-oZg4Sg8s
+
+ { "email": "Subbiah@gmail.com", "password": "Sri@123" }
+
+###
+POST http://localhost:3001/stores
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzQzNTI4MjAyLCJleHAiOjE3NDM1MzE4MDJ9.5ZmMO8O2pyV2kQMvPWbo13VmInCW0tTJSELSKHNYjc0
+
+{
+        "name": "Sports Elite",
+        "email": "info@sportselite.com",
+        "address": "555 Fitness Boulevard, Stadium Area"
+}
+
+###
+GET http://localhost:3001/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzQzNTI4MjAyLCJleHAiOjE3NDM1MzE4MDJ9.5ZmMO8O2pyV2kQMvPWbo13VmInCW0tTJSELSKHNYjc0
+
+###
+GET http://localhost:3001/stores
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzQzNTI4MjAyLCJleHAiOjE3NDM1MzE4MDJ9.5ZmMO8O2pyV2kQMvPWbo13VmInCW0tTJSELSKHNYjc0
+
+###
+GET http://localhost:3001/admin/stats
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzQzNTMwMTk2LCJleHAiOjE3NDM1MzM3OTZ9.pTAMszhP6CR6VES05m3zVi1B6tYylRcsd0O5n2Vqwig
+
+###
+GET http://localhost:3001/stores/search?query=555
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzQzNTMwMTk2LCJleHAiOjE3NDM1MzM3OTZ9.pTAMszhP6CR6VES05m3zVi1B6tYylRcsd0O5n2Vqwig
 
 
 ###
-GET http://localhost:5000/stats
+POST http://localhost:3001/ratings
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzNTAxMTQ2LCJleHAiOjE3NDM1MDQ3NDZ9.1A4hBd-76opXW9S9w9vZyIT_wIZKffWi4AqxRLvvBog
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NDM1MzEzNzksImV4cCI6MTc0MzUzNDk3OX0.VjyUERFiSyeN5cBROzQDdseMKORWYgjWhRf6abt2ltM
+
+ {
+    "user_id": 1,
+    "store_id": 6,
+    "rating": 3
+  }
+
 
 ###
-POST http://localhost:5000/init-sample-stores
+PUT http://localhost:3001/ratings
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NDM1MzEzNzksImV4cCI6MTc0MzUzNDk3OX0.VjyUERFiSyeN5cBROzQDdseMKORWYgjWhRf6abt2ltM
+
+ {
+    "store_id": 5,
+    "rating": 4
+  }
+
 
 ###
-GET http://localhost:5000/stores
+GET http://localhost:3001/store/ratings
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IlN0b3JlT3duZXIiLCJpYXQiOjE3NDM1MzE4MTIsImV4cCI6MTc0MzUzNTQxMn0.aKYUebmyOppYvVknngHf0DFsbMxqzHbVTGcBcutuLQs
+
+
+###
+GET http://localhost:3001/store/average-rating
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IlN0b3JlT3duZXIiLCJpYXQiOjE3NDM1MzE4MTIsImV4cCI6MTc0MzUzNTQxMn0.aKYUebmyOppYvVknngHf0DFsbMxqzHbVTGcBcutuLQs
