@@ -8,8 +8,8 @@ POST http://localhost:5000/register
 Content-Type: application/json
 
 {
-    "name": "Subbaih",
-    "email": "srikanth@gmail.com",
+    "name": "Subbiah",
+    "email": "subba@gmail.com",
     "password": "Owner@123",
     "address": "203 Owner Street",
     "role": "owner"
@@ -22,17 +22,10 @@ Content-Type: application/json
  { "email": "admin2@example.com", "password": "Admin@123" }
 
 ###
-POST http://localhost:5000/stores
+GET http://localhost:5000/stores
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzNTAxMjM2LCJleHAiOjE3NDM1MDQ4MzZ9.b_jYrEC57ie7OqefTRfnFf6arZ_3vxnZOYmZDuRPSVU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQzNTAyMjU0fQ.oZ6XpglDQskE6VaPiujOwsP-JmuXc4FRtl-oZg4Sg8s
 
-{
-    "name": "Srikanth",
-    "email": "user@gmail.com",
-    "password": "User@123",
-    "address": "458 User Street",
-    "role": "user"
-}
 
 ###
 GET http://localhost:5000/stats
